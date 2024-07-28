@@ -27,14 +27,25 @@ def top_10_customers(data):
     top_customers = customer_revenue.nlargest(10, 'product_price')
     return top_customers
 
+def save_to_csv(dataframe, filename):
+    dataframe.to_csv(filename, index=False)
+    print(f"Saved {filename}")
+
 def main():
     file_path = 'orders.csv'
     data = read_data(file_path)
     if data is not None:
-        print("Monthly Revenue:\n", compute_monthly_revenue(data))
-        print("Product Revenue:\n", compute_product_revenue(data))
-        print("Customer Revenue:\n", compute_customer_revenue(data))
-        print("Top 10 Customers:\n", top_10_customers(data))
+        monthly_revenue = compute_monthly_revenue(data)
+        save_to_csv(monthly_revenue, 'monthly_revenue.csv')
+        
+        product_revenue = compute_product_revenue(data)
+        save_to_csv(product_revenue, 'product_revenue.csv')
+        
+        customer_revenue = compute_customer_revenue(data)
+        save_to_csv(customer_revenue, 'customer_revenue.csv')
+        
+        top_customers = top_10_customers(data)
+        save_to_csv(top_customers, 'top_10_customers.csv')
 
-if __name__ == "__main__":
+if _name_ == "_main_":
     main()
