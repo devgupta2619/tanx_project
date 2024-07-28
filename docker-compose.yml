@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    command: python app/main.py
+    volumes:
+      - .:/app
+  test:
+    build: .
+    command: python -m unittest discover -s tests
+    volumes:
+      - .:/app
+
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: tanx_db
