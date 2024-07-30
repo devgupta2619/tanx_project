@@ -129,4 +129,4 @@ If you prefer to run the project locally without Docker, you can set up a virtua
 
 ## Output
 
-The Output for the main function are stored in seprate CSV files(customer_revenue.csv,monthly_revenue.csv,product_revenue.csv,top_10_customers.csv) and a demo video of project has been uploaded along side project for your reference
+The Output for the main function are stored in seprate CSV files(customer_revenue.csv,monthly_revenue.csv,product_revenue.csv,top_10_customers.csv) and a demo video of project has been uploaded along side project for reference.
